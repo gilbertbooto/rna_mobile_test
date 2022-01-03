@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rna_mobile_test/gps_offline/GeolocatorWidget.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GeolocatorWidget());
 }
 
 class MyApp extends StatelessWidget {
