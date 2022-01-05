@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:rna_mobile_test/gps_offline/GeolocatorWidget.dart';
+import 'package:rna_mobile_test/gps_offline/widgts.dart';
 
 void main() {
-  runApp(const GeolocatorWidget());
+  // runApp(const GeolocatorWidget());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'RNA Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const WidgetsTest(),
+      //home: const MyHomePage(title: 'RNA GPS OFFLINE'),
     );
   }
 }
