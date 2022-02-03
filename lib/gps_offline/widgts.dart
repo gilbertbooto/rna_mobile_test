@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ class WidgetsTest extends StatefulWidget {
 }
 
 class _WidgetsTest extends State<WidgetsTest> {
-  GlobalKey<FormState> _key = GlobalKey<FormState>();
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
   static const String _kLocationServicesDisabledMessage =
       'Location services are disabled.';
   static const String _kPermissionDeniedMessage = 'Permission denied.';
@@ -33,7 +35,10 @@ class _WidgetsTest extends State<WidgetsTest> {
   double? longitude;
   double? altitude;
   late final DateTime? timestamp;
-  final _controller = TextEditingController();
+  final _controllerlatitude = TextEditingController();
+  final _longitudelatitude = TextEditingController();
+  final _altitudelatitude = TextEditingController();
+
 
   Future<void> _getCurrentPosition() async {
     final hasPermission = await _handlePermission();
@@ -254,8 +259,8 @@ class _WidgetsTest extends State<WidgetsTest> {
     super.initState();
     setState(() {
       getUserLocation();
+      _toggleServiceStatusStream();
     });
-    _toggleServiceStatusStream();
   }
 
   @override
@@ -265,7 +270,7 @@ class _WidgetsTest extends State<WidgetsTest> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: const Text("RNA GPS"),
+        title: const Text("RNA Test"),
       ),
       body: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -275,7 +280,7 @@ class _WidgetsTest extends State<WidgetsTest> {
               children: [
                 TextFormField(
                   enabled: false,
-                  controller: _controller,
+                  controller: _controllerlatitude,
                   keyboardType: TextInputType.text,
                   maxLines: 1,
                   obscureText: false,
@@ -294,7 +299,7 @@ class _WidgetsTest extends State<WidgetsTest> {
                               BorderSide(color: Colors.green, width: 0.1))),
                   validator: (String? value) {
                     if (value!.isEmpty) {
-                      return "";
+                      return "euijkbidiijeiocs";
                     }
                   },
                   onSaved: (String? newValue) {
@@ -304,7 +309,7 @@ class _WidgetsTest extends State<WidgetsTest> {
                 sizedBox,
                 TextFormField(
                   enabled: false,
-                  controller: _controller,
+                  controller: _longitudelatitude,
                   keyboardType: TextInputType.text,
                   maxLines: 1,
                   obscureText: false,
@@ -327,13 +332,13 @@ class _WidgetsTest extends State<WidgetsTest> {
                     }
                   },
                   onSaved: (String? newValue) {
-                    latitude = double.parse(newValue!);
+                    longitude = double.parse(newValue!);
                   },
                 ),
                 sizedBox,
                 TextFormField(
                   enabled: false,
-                  controller: _controller,
+                  controller: _altitudelatitude,
                   keyboardType: TextInputType.text,
                   maxLines: 1,
                   obscureText: false,
@@ -356,7 +361,7 @@ class _WidgetsTest extends State<WidgetsTest> {
                     }
                   },
                   onSaved: (String? newValue) {
-                    latitude = double.parse(newValue!);
+                    altitude = double.parse(newValue!);
                   },
                 ),
                 sizedBox,
@@ -367,6 +372,11 @@ class _WidgetsTest extends State<WidgetsTest> {
                         return;
                       } else {
                         _key.currentState!.save();
+                        // ignore: avoid_print
+                        print('$latitude');
+                        print('$longitude');
+                        print('$altitude');
+                        print('$timestamp');
                       }
                     })
               ],

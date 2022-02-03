@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "401887932916",
+    "project_id": "rnamobiletest",
+    "storage_bucket": "rnamobiletest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401887932916:android:17a15ec0613e36285fc9a1",
+        "android_client_info": {
+          "package_name": "com.example.rna_mobile_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401887932916-odc4q87v2hgrdpu2jqt4k9idh6cupqjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFaKbFkonLr9INkj-AaKXY9DjFU1JZ_tI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401887932916-odc4q87v2hgrdpu2jqt4k9idh6cupqjk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
